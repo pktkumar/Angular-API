@@ -72,4 +72,25 @@ app.get('/api/names', (req, res)=>{
 res.json(myComponent.myNewMethod());
 });
 
+app.get('/user', (req, res) => {
 
+  const namefromHeader = req.header('Namefrom-Header');
+  console.log("namefromHeader..... " + namefromHeader);
+
+  res.send();
+});
+
+app.post('/api/items', (req, res) => {
+  const newItem = req.body;
+  newItem.id = data.length + 1;
+  data.push(newItem);
+  res.json(newItem);
+});
+
+
+
+const data = [
+  { id: 1, name: '2025 Kumar Vaduganathan' },
+  { id: 2, name: 'Vaduganathan' },
+  { id: 3, name: 'Kumar' },
+];
